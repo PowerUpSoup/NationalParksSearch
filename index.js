@@ -11,7 +11,7 @@ function displayResults(responseJson) {
     if(responseJson.data == 0){
         alert('Something went wrong, check your search parameters. It should be formatted as a two letter state code.')
     } else {
-        for ( i = 0 ; i < responseJson.data ; i++ ){
+        for ( i = 0 ; i < responseJson.data.length ; i++ ){
             console.log('we looped this many times');
             $('#results-list').append(
                 `<li><h1>${responseJson[i].fullName}</h1>
