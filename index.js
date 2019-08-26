@@ -8,16 +8,16 @@ function makeRequest(){
 function displayResults(responseJson) {
     console.log(responseJson);
     $('#results-list').empty();
-    if(responseJson.data == 0){
+    if(responseJson.data.length == 0){
         alert('Something went wrong, check your search parameters. It should be formatted as a two letter state code.')
     } else {
         for ( i = 0 ; i < responseJson.data.length ; i++ ){
             console.log('we looped this many times');
             $('#results-list').append(
-                `<li><h1>${responseJson[i].fullName}</h1>
-                <li>${responseJson[i].description}</li><br>
-                <a href="${responseJson[i].url}>${responseJson[i].url}</a><br>
-                <a href="${responseJson[i].directionsUrl}>Get Directions</a>`
+                `<li><h1>${responseJson.data[i].fullName}</h1>
+                <li>${responseJson.data[i].description}</li><br>
+                <a href="${responseJson.data[i].url}>${responseJson[i].url}</a><br>
+                <a href="${responseJson.data[i].directionsUrl}>Get Directions</a>`
             )
         }
     }
