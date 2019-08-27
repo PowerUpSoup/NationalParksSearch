@@ -2,7 +2,7 @@ function makeRequest(){
     fetch("https://developer.nps.gov/api/v1/parks?stateCode=" + stateSearch+ "&api_key=F5cAEghuj8MT3cc3EYEzi3aKRfvK81RPrSZR0Lqc&limit=" + maxResults )
     .then(response => response.json())
     .then(responseJson => displayResults(responseJson))
-    .catch(error => alert('Something went wrong.'))
+    .catch(error => console.log('Error'))
 }
 
 function displayResults(responseJson) {
